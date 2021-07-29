@@ -10,7 +10,7 @@ let secVal = document.getElementById("sec-val");
 let buttons = document.querySelectorAll(".btn");
 let secInput = document.getElementById("sec-input");
 let value = parseInt(secVal.textContent);
-const beginningVal = 5;
+const beginningVal = 60;
 console.log(secVal.textContent);
 console.log(buttons);
 console.log(value);
