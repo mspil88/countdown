@@ -3,6 +3,7 @@
     <head>
         <title>Countdown</title>
         <link rel="stylesheet" href="src/styles.css">
+        
     </head>
 
     <body>
@@ -16,7 +17,7 @@
                     </form> -->
 
                     <div class="submit-sec">
-                        <input id="sec-input" type="number" oninput="this.value|=0" placeholder="secs">
+                        <input id="sec-input" type="number" oninput="this.value|=0" min="1" placeholder="secs">
                         <button class="btn submit">SUBMIT</button>
                     </div>
                     <button class="btn start">start</button>
@@ -25,7 +26,7 @@
                 </div>
             </div>
         </main>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
         <script src="src/index.js"></script>
     </body>
 
