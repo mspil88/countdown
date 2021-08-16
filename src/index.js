@@ -126,3 +126,4 @@ function animate(elem) {
 function R(min, max) {
     return min+Math.random()*(max-min)
 };
+

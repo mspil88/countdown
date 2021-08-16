@@ -5,6 +5,7 @@ main {
     display: grid;
     place-items: center;
     
+    
 }
 
 .section {
@@ -56,6 +57,11 @@ body {
     font-weight: bold;
     color: rgba(255, 183, 195, 0.973);
     text-shadow: 0 0 5px black;
+    margin-bottom: 0;
+}
+
+.btn-container {
+    padding-bottom: 35px;
 }
 
 .btn {
@@ -103,4 +109,113 @@ input[type="number"] {
 .btn:hover {
     color: #fff;
     background: #222;
+}
+
+.bird-container {
+    /* width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden; */
+    /* animation: bg-change 5s infinite; */
+    
+}
+
+
+.bird1 {
+    position: absolute;
+    width: 100px;
+    right: 0px;
+    animation-name: flyaway;
+    animation-duration: 6s;
+    display: inline-flex;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    
+}
+
+.bird2 {
+    position: absolute;
+    width: 100px;
+    right: 60px;
+    animation-name: flyaway;
+    animation-duration: 6s;
+    display: inline-flex;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    
+}
+
+
+.bird2 {
+    position: absolute;
+    width: 100px;
+    right: 60px;
+    top: 20px;
+    animation-name: flyaway;
+    animation-duration: 6s;
+    display: inline-flex;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    
+}
+
+
+.bird3 {
+    position: absolute;
+    width: 100px;
+    right: 120px;
+    top: 10px;
+    animation-name: flyaway;
+    animation-duration: 6s;
+    display: inline-flex;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    
+}
+
+
+.bird4 {
+    position: absolute;
+    width: 100px;
+    right: -40px;
+    top: 5px;
+    animation-name: flyaway;
+    animation-duration: 6s;
+    display: inline-flex;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    
+}
+
+
+
+@keyframes flyaway {
+    from{transform: translate(150px)}
+    to{transform: translate(-1700px)}
+}
+
+@keyframes flyawayLeftToRight {
+    from{transform: translate(-220px)}
+    to{transform: translate(1500px)}
+}
+
+
+.bird5 {
+    width: 30px;
+    /* -webkit-transform: scaleX(-1);
+    transform: scaleX(-1); */
+    position: relative;
+    top: 550px;
+    overflow: hidden;
+    animation-name: flyawayLeftToRight;
+    animation-duration: 10s;
+    display: inline-flex;
+    left: -270px;
+    /* animation-fill-mode: both; */
+    animation-iteration-count: infinite;
+}
+
+
+audio::-webkit-media-controls-panel {
+    background-color: transparent;
 }
