@@ -191,7 +191,7 @@ input[type="number"] {
 
 @keyframes flyaway {
     from{transform: translate(150px)}
-    to{transform: translate(-1700px)}
+    to{transform: translate(-2000px)}
 }
 
 @keyframes flyawayLeftToRight {
