@@ -32,6 +32,14 @@ buttons.forEach((btn) => {
             console.log("stop clicked");
             countdown = clearInterval(countdown);
             stopCountDown();
+            TweenLite.killTweensOf("div");
+            let leavesElems = document.querySelectorAll("#leavesDiv");
+            leavesElems.forEach(elem => elem.remove());
+            
+            
+            
+           
+       
         } else if(actions.contains("reset")) {
             console.log("reset clicked");
             countdown = clearInterval(countdown);
@@ -51,21 +59,29 @@ buttons.forEach((btn) => {
     })
 })
 
+let fallingSwitch = false;
 
 function countingDown() {
     if(t > 0) {
+        console.log(fallingSwitch);
         t = --t;
         console.log(t);
         secVal.innerHTML = t;
+
+
     } else {
         t = 0;
-        const timeOutMsg = "BOOM";
-        secVal.innerHTML = timeOutMsg;
-        let flash = setTimeout(()=> {
-            secVal.style.color = (secVal.style.color == "black") ? "#84c0ae": "black"
-            console.log("===sec val===")
-            console.log(secVal.innerHTML);
-        }, 50);
+        fallingSwitch = true;
+        falling = makeLeavesFall();
+        console.log(falling);
+        
+        // const timeOutMsg = "BOOM";
+        // secVal.innerHTML = timeOutMsg;
+        // let flash = setTimeout(()=> {
+        //     secVal.style.color = (secVal.style.color == "black") ? "#84c0ae": "black"
+        //     console.log("===sec val===")
+        //     console.log(secVal.innerHTML);
+        // }, 50);
         
         }
     }
@@ -75,3 +91,39 @@ function stopCountDown(interval) {
     clearInterval(interval);
 
 }
+
+
+let fallingLeaves = false;
+let total = 5;
+let container = document.getElementsByClassName("count-container")[0];
+let win = window.innerWidth;
+let height = window.innerHeight;
+
+console.log(win);
+console.log(height);
+
+
+
+function makeLeavesFall() {
+    fallingLeaves = true;
+    
+    var Div = document.createElement('div');
+    Div.setAttribute("id", "leavesDiv");
+    TweenLite.set(Div,{attr:{class:'leaves'},x:R(0,win),y:R(-700,-700),z:R(-700,700)});
+    container.appendChild(Div);
+    animate(Div);
+
+};
+  
+
+function animate(elem) {
+    TweenLite.to(elem, R(6, 15),
+    {y: height+100, ease:Linear.easeNone, repeat:-1, delay: -15});
+    TweenLite.to(elem,R(4,8),{x:'+=100',rotationZ:R(0,180),repeat:-1,yoyo:true,ease:Sine.easeInOut});
+    TweenLite.to(elem,R(2,8),{rotationX:R(0,360),rotationY:R(0,360),repeat:-1,yoyo:true,ease:Sine.easeInOut,delay:-5});
+  };
+
+function R(min, max) {
+    return min+Math.random()*(max-min)
+};
+

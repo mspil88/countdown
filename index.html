@@ -3,12 +3,27 @@
     <head>
         <title>Countdown</title>
         <link rel="stylesheet" href="src/styles.css">
+        
     </head>
 
     <body>
         <main>
+            
             <div class="count-container">
-                <span id="sec-val">60</span>
+                <div class="bird-container">
+                    <img src="../img/pajaro.gif" class="bird1">
+                    <img src="../img/pajaro.gif" class="bird2">
+                    <img src="../img/pajaro.gif" class="bird3">
+                    <img src="../img/pajaro.gif" class="bird4">
+                    <img src="../img/pajaro2.gif" class="bird5">
+                    
+                </div>
+                
+                <span id="sec-val">60
+                </span>
+                
+                
+                
                 <div class="btn-container">
                     <!-- <form class="form-sec">
                         <input id="sec-input" type="text" placeholder="seconds">
@@ -16,16 +31,21 @@
                     </form> -->
 
                     <div class="submit-sec">
-                        <input id="sec-input" type="number" oninput="this.value|=0" placeholder="secs">
+                        <input id="sec-input" type="number" oninput="this.value|=0" min="1" placeholder="secs">
                         <button class="btn submit">SUBMIT</button>
                     </div>
                     <button class="btn start">start</button>
                     <button class="btn stop">stop</button>
                     <button class="btn reset">reset</button>
                 </div>
+            <div class = "audio">
+                <audio class="audio-box" controls autoplay>
+                    <source src="sounds/rainforest.mp3" type="audio/mp3">
+                </audio>
+            </div>
             </div>
         </main>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
         <script src="src/index.js"></script>
     </body>
 
